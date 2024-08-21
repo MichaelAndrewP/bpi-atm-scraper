@@ -138,19 +138,19 @@ def scrape_bpi_locations(search_key):
     time.sleep(5)
 
     # Step 4: Scroll until all data is loaded
-    # scrollable_div = driver.find_element(By.CSS_SELECTOR, "div.m6QErb.DxyBCb.kA9KIf.dS8AEf.XiKgde.ecceSd.QjC7t")
-    # last_height = driver.execute_script("return arguments[0].scrollHeight", scrollable_div)
+    scrollable_div = driver.find_element(By.CSS_SELECTOR, "div.m6QErb.DxyBCb.kA9KIf.dS8AEf.XiKgde.ecceSd.QjC7t")
+    last_height = driver.execute_script("return arguments[0].scrollHeight", scrollable_div)
 
-    # while True:
-    #     # Scroll down
-    #     driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", scrollable_div)
-    #     time.sleep(2)  # Wait for new data to load
+    while True:
+        # Scroll down
+        driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", scrollable_div)
+        time.sleep(2)  # Wait for new data to load
 
-    #     # Calculate new scroll height and compare with last scroll height
-    #     new_height = driver.execute_script("return arguments[0].scrollHeight", scrollable_div)
-    #     if new_height == last_height:
-    #         break  # Exit the loop if no new data is loaded
-    #     last_height = new_height
+        # Calculate new scroll height and compare with last scroll height
+        new_height = driver.execute_script("return arguments[0].scrollHeight", scrollable_div)
+        if new_height == last_height:
+            break  # Exit the loop if no new data is loaded
+        last_height = new_height
 
     # Step 5: Extract Data
     results = driver.find_elements(By.CSS_SELECTOR, "a.hfpxzc")

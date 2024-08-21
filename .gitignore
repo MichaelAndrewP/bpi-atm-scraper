@@ -10,6 +10,7 @@ cc-google-services.json
 
 #env
 /.env/
+.env
 
 #chrome-drive
 chromedriver.exe
