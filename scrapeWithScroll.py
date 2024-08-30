@@ -89,7 +89,7 @@ def transform_item(item):
     bank_ref = db.document(bank_document_path)
  
     
-      return {
+    return {
         'address': address_details if address_details else {
             'city': "",
             'country': "PH",
@@ -120,7 +120,7 @@ def transform_item(item):
         'name': item['name'],
         'qrCode': 'https://example.com/qrcode/ ',
         'status': 'online',
-        'addedBy': 'admin',
+        'addedBy':'admin'
     }
 
 def scrape_bpi_locations(search_key):
